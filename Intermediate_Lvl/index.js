@@ -118,7 +118,11 @@ function longestWorld(string){
             biggestWordsArr.push(word)
             // console.log("file: index.js ~ line 117 ~ longestWorld ~ biggestWordsArr", biggestWordsArr)
         } else if (word.length>=wordSize && biggestWordsArr[0].length>0) {
+            // Sinon on a deja un mot dans biggestWordsArr
+            // dc si le nouveau mot irritéré a autant plus de lettres que la taille du dernier mot stocké
                 console.log("file: index.js ~ line 120 ~ longestWorld ~ biggestWordsArr", biggestWordsArr)
+                // garder celui ou ceux qui est/sont  déja dedans et y ajouter le dernier mot checker
+//              // en utilisant le spread Opérateur
                 biggestWordsArr = [...biggestWordsArr, word]
         }
     }
@@ -136,6 +140,5 @@ console.log(longestWorld('I went straight to the beach, like straight straight')
 //                 console.log('ligne12: biggestWordsArr[0].length : ' , biggestWordsArr[0].length);
 //                 biggestWordsArr = [...biggestWordsArr, word]
 //                 // sinon si le mot est aussi grand wue celui déja dans le array biggestWordsArr
-//                 // garder celui ou ceux qui est/sont  déja dedans et y ajouter le dernier mot checker
-//                 // en utilisant le spread Opérateur
+//                 
 // }
