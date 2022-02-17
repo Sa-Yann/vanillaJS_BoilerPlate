@@ -93,3 +93,49 @@ console.log(series([2, 4, 6, 8]));
 console.log(series([3, 9, 27, 81, 243]));
 console.log(series([1, 5, 1, 18]));
 console.log(series([1, 5, 7, 18]));
+
+
+console.log("      ");
+console.log("      ");
+console.log("3- THE LONGEST WORLD UPDATE: WHAT IF FEW WORDS HAVE TEH SAME LENGTH");
+console.log("      ");
+
+function longestWorld(string){
+    let allWordsArr = string.split(' ');
+    // console.log("file: index.js ~ line 105 ~ longestWorld ~ allWordsArr", allWordsArr)
+    let wordSize = 0;
+    let biggestWordsArr = []
+    console.log("file: index.js ~ line 108 ~ longestWorld ~ biggestWordsArr", biggestWordsArr.length)
+
+    for(i=0; i<allWordsArr.length; i++) {
+        const word = allWordsArr[i]
+        // si la longueyur du mot est superieure a la longueur actuelle de wordSize
+        // sachant que lors de la 2ere loop ce sera toujours le cas
+        if(word.length>wordSize){
+            // donner a wordSize la valeur de world Lemgth
+            wordSize = word.length
+            biggestWordsArr = []
+            biggestWordsArr.push(word)
+            // console.log("file: index.js ~ line 117 ~ longestWorld ~ biggestWordsArr", biggestWordsArr)
+        } else if (word.length>=wordSize && biggestWordsArr[0].length>0) {
+                console.log("file: index.js ~ line 120 ~ longestWorld ~ biggestWordsArr", biggestWordsArr)
+                biggestWordsArr = [...biggestWordsArr, word]
+        }
+    }
+    
+    return biggestWordsArr
+}
+
+
+console.log(longestWorld('I woke up early today bachbouzouk'));
+console.log(longestWorld('I went straight to the beach, like straight straight'));
+
+
+// if (word.length = biggestWordsArr[0].length){
+//                 console.log("file: index.js ~ line 120 ~ longestWorld ~ word.length", word.length)
+//                 console.log('ligne12: biggestWordsArr[0].length : ' , biggestWordsArr[0].length);
+//                 biggestWordsArr = [...biggestWordsArr, word]
+//                 // sinon si le mot est aussi grand wue celui déja dans le array biggestWordsArr
+//                 // garder celui ou ceux qui est/sont  déja dedans et y ajouter le dernier mot checker
+//                 // en utilisant le spread Opérateur
+// }
