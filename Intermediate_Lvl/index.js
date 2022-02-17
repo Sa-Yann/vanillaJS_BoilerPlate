@@ -16,6 +16,11 @@ console.log("      ");
 console.log('2- the longest world');
 console.log("      ");
 
+console.log("      ");
+console.log("1- THE LONGEST WORLD");
+console.log("      ");
+
+
 function longestWorld(phrase) {
     let worldsArray = phrase.split(' ');
     console.log(worldsArray);

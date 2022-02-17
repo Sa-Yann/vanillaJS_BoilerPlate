@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     transition: all 0, 04s;
-    font-size: 64.5%
+    font-size: 64.5%;
         /* setting up default Browser font size from 16 to 10px*/
         /* knowing that 1rem = 10px this ease the fact to calculate rem in px
      2rem is know 20px*/
@@ -19,5 +19,4 @@ body {
     padding: 0;
     margin: 0;
     font-size: 1.6rem;
-    
 }
