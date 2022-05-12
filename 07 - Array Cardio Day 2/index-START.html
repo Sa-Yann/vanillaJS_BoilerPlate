@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Cardio 💪💪</title>
+</head>
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <script>
+    // ## Array Cardio Day 2
+
+    const people = [
+      { name: 'Wes', year: 1988 },
+      { name: 'Kait', year: 1986 },
+      { name: 'Irv', year: 1970 },
+      { name: 'Lux', year: 2015 }
+    ];
+
+    const comments = [
+      { text: 'Love this!', id: 523423 },
+      { text: 'Super good', id: 823423 },
+      { text: 'You are the best', id: 2039842 },
+      { text: 'Ramen is my fav food ever', id: 123523 },
+      { text: 'Nice Nice Nice!', id: 542328 }
+    ];
+
+    // 1 - Some and Every Checks
+    console.log('1 - Some and Every Checks');
+    // Array.prototype.some() // is at least one person 19 or older?
+    console.log('is at least one person 19 or older?');
+    // Array.prototype.every() // is everyone 19 or older?
+    console.log('Array.prototype.every() // is everyone 19 or older?');
+
+    const currentDate = (new Date()).getFullYear()
+    console.log("file: index-START.html ~ line 34 ~ currentDate", currentDate)
+
+    const testYear = (new Date()).getFullYear() - people[0].year
+    console.log("file: index-START.html ~ line 37 ~ testYear", testYear)
+
+    const isAdult = people.some(function(person) {
+      if((new Date()).getFullYear() - person.year > 18) {
+        return true;
+      }
+    })
+    console.log("file: index-START.html ~ line 41 ~ isAdult ~ isAdult", isAdult)
+    
+    // full es6
+    const isAdult_es6 = people.some( 
+      person =>  (new Date()).getFullYear() - person.year > 18
+    )
+    console.log("file: index-START.html ~ line 50 ~ isAdult_es6", isAdult_es6)
+    
+    console.log("       ")
+    console.log("       ")
+    console.log("       ")
+    console.log('Array.prototype.every() // is everyone 19 or older?');
+
+    const areTheyAllAdults = people.every( person => ((new Date()).getFullYear() - person.year) >= 19);
+    console.log("file: index-START.html ~ line 59 ~ areTheyAllAdults", areTheyAllAdults);
+
+    // Array.prototype.find()
+    // Find is like filter, but instead returns just the one you are looking for
+    // find the comment with the ID of 823423
+
+    const ID823423 = comments.find( comment => comment.id === 823423)
+    console.log("file: index-START.html ~ line 66 ~ ID823423", ID823423)
+
+    // Array.prototype.findIndex()
+    // Find the comment with this ID
+    
+
+    const indexWith_id823423 = comments.findIndex( comment => comment.id === 823423)
+    console.log("file: index-START.html ~ line 73 ~ indexWith_id823423", indexWith_id823423)
+
+    // delete the comment with the ID of 823423
+    console.log('delete the comment with the ID of 823423 using splice which extract and item from an array and slice which a llow to cut inside of the array forcing to rebuilt the array with a spread operator to jooin the two news sub_arrays')
+
+
+    // splice(startIndex, removeItemfromIndexLevel, itemToReplaceAtstartIndex, itemToAddAtstartIndex+1, itemToAddAtstartIndex + 1  )
+    // if startIndex > table.length the splice add items starting from the end of the table
+    // comments.splice(indexWith_id823423, 1) // extract only the specified item 
+    // console.table("file: index-START.html ~ line 79 ~ comments", comments)
+
+    // comments.splice(indexWith_id823423, 2) // extract the specified item and the one after
+    // console.table("file: index-START.html ~ line 79 ~ comments", comments)
+
+    // console.log('using splice to replace an item')
+    //NB: replace act before the extract so in need of an async function
+
+    // setTimeout( () => {
+    //   comments.splice(0, indexWith_id823423, { text: 'Love her!', id: 100000 })
+    //   console.table("file: index-START.html ~ line 85 ~ comments", comments)
+    // }, 2000)
+    
+
+    // using slice methode knowing indexWith_id823423 = 1
+    const newCommentArray_part1 = comments.slice(0,1) //cut comments before index 1
+    console.log("file: index-START.html ~ line 98 ~ newCommentArray_part1", newCommentArray_part1);
+
+    const newCommentArray_part2 = comments.slice(2, 5) //cut comments before index 1
+      console.log("file: index-START.html ~ line 98 ~ newCommentArray_part2", newCommentArray_part2);
+
+    const newCommentArray = [
+      ...newCommentArray_part1,
+      ...newCommentArray_part2
+    ]
+    console.log("file: index-START.html ~ line 107 ~ newCommentArray", newCommentArray)
+  </script>
+</body>
+</html>

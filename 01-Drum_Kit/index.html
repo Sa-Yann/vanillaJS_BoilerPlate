@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>DrumKit</title>
+</head>
+<body>
+    <!-- github: https://github.com/ganeshkumarm1/javascript30 -->
+    <!-- https://keycode.info/: keyboard relative infos like evnet.which(number), event code ex: KeyA  and keyCode:68 -->
+    <div class="all_keys">
+        <div data-key="65" class="keyContainer">
+            <div class="keyName">A</div>
+            <span class="soundName">clap</span>
+        </div>
+        <div data-key="83" class="keyContainer">
+            <div class="keyName">S</div>
+            <span class="soundName">hihat</span>
+        </div>
+        <div data-key="68" class="keyContainer">
+            <div class="keyName">D</div>
+            <span class="soundName">kick</span>
+        </div>
+        <div data-key="70" class="keyContainer">
+            <div class="keyName">F</div>
+            <span class="soundName">openhat</span>
+        </div>
+        <div data-key="71" class="keyContainer">
+            <div class="keyName">G</div>
+            <span class="soundName">boom</span>
+        </div>
+        <div data-key="72" class="keyContainer">
+            <div class="keyName">H</div>
+            <span class="soundName">ride</span>
+        </div>
+        <div data-key="74" class="keyContainer">
+            <div class="keyName">J</div>
+            <span class="soundName">snare</span>
+        </div>
+        <div data-key="75" class="keyContainer">
+            <div class="keyName">K</div>
+            <span class="soundName">tom</span>
+        </div>
+        <div data-key="76" class="keyContainer">
+            <div class="keyName">L</div>
+            <span class="soundName">tink</span>
+        </div>
+    </div>
+    <audio src="sounds/clap.wav" data-key="65"></audio>
+    <audio src="sounds/hihat.wav" data-key="83"></audio>
+    <audio src="sounds/kick.wav" data-key="68"></audio>
+    <audio src="sounds/openhat.wav" data-key="70"></audio>
+    <audio src="sounds/boom.wav" data-key="71"></audio>
+    <audio src="sounds/ride.wav" data-key="72"></audio>
+    <audio src="sounds/snare.wav" data-key="74"></audio>
+    <audio src="sounds/tom.wav" data-key="75"></audio>
+    <audio src="sounds/tink.wav" data-key="76"></audio>
+
+    <!-- js -->
+    <script src="drumkit.js"></script>
+    
+</body>
+</html>

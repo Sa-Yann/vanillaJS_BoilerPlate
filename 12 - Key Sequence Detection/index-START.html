@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+  
+<script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+<script type="text/javascript">
+  let keysInArray = [];
+  const secretCode = 'Sayann';
+  
+  // console.log("file: index-START.html ~ line 12 ~ secretCode.length", secretCode.length)
+  function findSecretCode(e)  {
+    console.log(e.key);
+    keysInArray.push(e.key);
+    // console.log("file: index-START.html ~ line 15 ~ findSecretCode ~ keysInArray", keysInArray)
+    // keysInArray.splice(-secretCode.length - 1, 1 )
+    // console.log("file: index-START.html ~ line 20 ~ findSecretCode ~ keysInArray", keysInArray)
+    if(keysInArray.length > secretCode.length ) {
+      // keysInArray.splice(fromWhereDoIcut, howMamnycaracteres)
+      keysInArray.splice(-secretCode.length -1, 1)
+      console.log("file: index-START.html ~ line 20 ~ findSecretCode ~ keysInArray", keysInArray);
+      // const secretCode_RegX = new RegExp(secretCode, 'gi');
+      const keysInArray_RegX = new RegExp(keysInArray.join(''), 'gi');
+      console.log("file: index-START.html ~ line 26 ~ findSecretCode ~ keysInArray.join()", keysInArray.join())
+      console.log("file: index-START.html ~ line 26 ~ findSecretCode ~ keysInArray_RegX", keysInArray_RegX)
+      
+      secretCode.match(keysInArray_RegX) && console.log('BAAAAM ÇA MATCH') ;
+      secretCode.match(keysInArray_RegX) && cornify_add()
+    }
+  };
+  window.addEventListener('keyup', findSecretCode);
+</script>
+</body>
+</html>

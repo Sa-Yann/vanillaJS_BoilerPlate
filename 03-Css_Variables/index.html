@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./allStyle.css">
+        <title>CCS Variables</title>
+    </head>
+    <body>
+        <main>
+            <div class="header">
+                <h1>Update CSS Variables with <span>JS</span></h1>
+                <div class="controllers">
+                    <label for="spacing">Spacing</label>
+                    <input id="spcId" type="range" name="spacing" min="10" max="200" data-sizing="px" data-test="test dataset">
+            
+                    <label for="blur">Blur</label>
+                    <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+            
+                    <label for="colorBckGrnd">Base Color</label>
+                    <input type="color" name="colorBckGrnd" value="#ffc600">
+                </div>
+            </div>
+            <div class="image">
+                <img src="./chris-karidis-nnzkZNYWHaU-unsplash(1).jpg">
+            </div>
+        </main>
+    </body>
+    <script>
+        console.log('CSS VARIABLE AND TRIGURRING INPUT')
+        // const spacingInput = document.querySelector('#spcId')
+        // console.log("file: index.html ~ line 34 ~ spacingInput", spacingInput)
+        const allInputs = document.querySelectorAll('.controllers input')
+        
+
+        function handleUpdates(){
+            // console.log(this.value) //this is targetting input 
+            // console.log(this.dataset) //dataSet is an objectthat contain all the data attribute declared on the specific object
+            // like this we can target the px data attribut and attache the value to with a join methode
+            const suffix = this.dataset.sizing || ' ' // ' ' is used to avoid undefine when there are no dataset suffix link to the input
+            // console.log("file: index.html ~ line 43 ~ handleUpdates ~ suffix", suffix)
+            console.log(this.name); // retrieving each input name attribute definition
+            document.documentElement.style.setProperty(`--${this.name}`, `${this.value}${suffix}` )
+            console.log("file: index.html ~ line 45 ~ handleUpdates ~ document", document)
+        }
+
+        // adding listeners to the inputs 
+        allInputs.forEach(input => input.addEventListener('change', handleUpdates))
+        // allInputs.forEach(input => input.addEventListener('mousemove', handleUpdates))
+    </script>
+</html>
